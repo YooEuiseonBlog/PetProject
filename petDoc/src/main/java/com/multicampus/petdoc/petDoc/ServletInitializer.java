@@ -14,9 +14,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ServletInitializer extends SpringBootServletInitializer {
-
-	@Bean
-	public ConfigurableServletWebServerFactory configurableServletWebServerFactory ( ) {
+   @Bean
+   public ConfigurableServletWebServerFactory configurableServletWebServerFactory ( ) {
         return new TomcatServletWebServerFactory() {
             @Override
             protected void postProcessContext(Context context) {
