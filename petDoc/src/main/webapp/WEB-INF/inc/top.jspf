@@ -12,14 +12,17 @@
 </head>
 <body>
 <div class="Top_container">
-	<div class="Top_logo">PetDoc</div>
-	<div class="Top_profile_section"> 프로필</div>
+	<div class="Top_logo"><img class="menu_logo" src="/img/logo_1.png"/>PetDoc<img class="menu_button" src="/img/menu.png"/></div>
+	<div class="Top_profile_section"> 
+		<img id = "Top_profile" src="/img/logo_1.png"/>
+		<div id= "Top_info"> 유저 이름</div>
+	</div>
 	<div class="Top_menu_select">
 		<ul>
-			<li> 공지사항 </li>
-			<li> 자유게시판 </li>
-			<li> 병원검색 </li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">자유게시판</a></li>
+			<li><a href="#">병원검색</a></li>
 		</ul>
 	</div>
-
 </div>
+<div class="main_container">
