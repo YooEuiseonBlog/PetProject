@@ -29,13 +29,18 @@
 	text-align: center;
 	margin-bottom:20px;
 	margin-top:20px;
+	transition: opacity 0.2s;
+	white-space: nowrap;
+	opacity:0;
 }
 
 .menu_logo{
-	position:absolute;
+	position:relative;
 	width:50px;
-	left: 20px;
-	top : 7px;
+	top:15px;
+	margin-right:10px;
+	margin-left:5px;
+
 }
 
 .Top_profile_section{
@@ -46,12 +51,17 @@
 #Top_profile{
 	width:200px;
 	border-radius: 100%;
+	opacity:0;
+	transition: opacity 0.3s;
+	
 }
 
 #Top_info{
 	height:50px;
 	margin-top:10px;
 	margin-bottom:20px;
+	opacity:0;
+	transition: opacity 0.3s;
 }
 
 /*마우스 오버*/
