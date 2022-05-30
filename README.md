@@ -1,4 +1,4 @@
-# PetProject
+# petdoc-finder
 
 ## Project Description
 - Pet-Doctor Finder : 
@@ -34,7 +34,7 @@
 
 ## Credits
 
-[[김자영](https://github.com/kjy222), [유의선](https://github.com/leesm316), [](), []()
+[[김귀영](), [김자영](https://github.com/kjy222), [박세윤](), [이채경](), [유의선](https://github.com/leesm316)]
 
 
 ## Contributors
