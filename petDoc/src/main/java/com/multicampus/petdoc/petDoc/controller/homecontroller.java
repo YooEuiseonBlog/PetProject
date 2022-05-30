@@ -2,11 +2,15 @@ package com.multicampus.petdoc.petDoc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
 public class homecontroller {
 	@GetMapping("/")
-	public String home() {
-		return "index";
+	public ModelAndView home() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		return mav;
 	}
 }

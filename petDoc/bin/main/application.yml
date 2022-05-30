@@ -1,5 +1,5 @@
 server: 
-  port: 8091
+  port: 8092
   servlet:
     encoding: #encoding utf-8설정
       charset: UTF-8
