@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<sec:authorize access="isAuthenticated()">
+    <sec:authentication property="principal" var="principal"/>
+</sec:authorize>
+<head>
+    <meta charset="UTF-8">
+    <title>마이 페이지</title>
+</head>
+<body>
+
+    <form action="/mypage" method="post">
+        <h1>개인 정보</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <td th:text="${member.getUser_id()}"></td>
+                <input type="hidden" name="id" th:value="${member.getUser_id()}">
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td th:text="${member.getUser_pwd()}"></td>
+                <th>수정</th>
+                <td><input type="text" name="pwd"></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td th:text="${member.getUser_addr()}"></td>
+                <th>수정</th>
+                <td><input type="text" name="addr"></td>
+            </tr>
+            <tr>
+                <th>프로필 사진</th>
+                <td><img th:src="@{/img/} + ${member.getUser_img()}"></td>
+                <th>수정</th>
+                <td><input type = "file"></td>
+            </tr>
+        </table>
+        <input type="submit" value="수정">
+    </form>
+
+
+</body>
+</html>

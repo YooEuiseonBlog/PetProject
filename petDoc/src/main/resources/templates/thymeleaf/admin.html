@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+</head>
+<body>
+    <form action="/admin" method="post">
+        <table>
+            <tr th:each="list : ${page}">
+                <th>유저 ID</th>
+                <input type="hidden" th:value="${list.user_id}" name="id"/>
+                <td th:text="${list.user_id}">
+                </td>
+                <th>유저 비밀번호</th>
+                <td><input type="text" th:value="${list?.user_pwd}" name="pwd"></td>
+                <!--            <td th:text="${list.user_pwd}"></td>-->
+                <th>유저 이름</th>
+                <td><input type="text" th:value="${list?.user_name}" name="name"></td>
+                <!--            <td th:text="${list.user_name}"></td>-->
+                <th>유저 주소</th>
+                <td><input type="text" th:value="${list?.user_addr}" name="addr"></td>
+                <!--            <td th:text="${list.user_addr}"></td>-->
+                <th>유저 레벨</th>
+                <td><input type="number" th:value="${list?.user_level}" name="level"></td>
+                <!--            <td th:text="${list.user_level}"></td>-->
+            </tr>
+        </table>
+        <input type="submit" value="수정">
+    </form>
+
+
+</body>
+</html>
