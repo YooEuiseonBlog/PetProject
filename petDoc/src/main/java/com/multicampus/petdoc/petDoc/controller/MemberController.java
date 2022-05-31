@@ -1,6 +1,7 @@
 package com.multicampus.petdoc.petDoc.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,36 @@ public class MemberController {
 		mav.setViewName("/member/login");
 		return mav;
 	}
+	
+	//로그인 진행
+		@PostMapping("/loginOk")
+		public ModelAndView loginOk(MemberVO vo, HttpSession session) {
+			MemberVO vo2 = service.loginCheck(vo);
+					
+			ModelAndView mav = new ModelAndView();
+			if (vo2 != null) {// 로그인 성공
+				session.setAttribute("logId", vo2.getUser_id());
+				session.setAttribute("logLevel", vo2.getUser_level());
+				session.setAttribute("logName", vo2.getUser_name());
+				session.setAttribute("logImg", vo2.getUser_img());
+				session.setAttribute("logStatus", "Y");
+				mav.setViewName("redirect:/");// 홈으로 이동
+			}else {// 로그인 실패
+				mav.setViewName("member/loginFail");
+			}
+			return mav;
+		}
+		
+		// 로그아웃
+		@GetMapping("/logout")
+		public ModelAndView logout(HttpSession session) {
+			
+			session.invalidate();
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("redirect:/");
+			return mav;
+		}
+	
 	
 	//회원가입페이지로 이동
 	@GetMapping("join")

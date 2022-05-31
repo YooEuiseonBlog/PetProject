@@ -5,8 +5,7 @@
   
 <mapper namespace="com.multicampus.petdoc.petDoc.dao.MemberDAO">
 	<select id="loginCheck" resultType="com.multicampus.petdoc.petDoc.vo.MemberVO">
-		select user_id, user_name, user_img, user_level, user_addr from member
-
+		select user_id, user_name, user_img, user_level from member
 		where user_id=#{user_id} and user_pwd=#{user_pwd}
 	</select>
 	
