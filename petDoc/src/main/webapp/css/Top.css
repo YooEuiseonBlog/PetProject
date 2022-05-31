@@ -7,6 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+	background-color: rgba(146,180,236,1);
+}
 /*Top 부분*/
 /*기본*/
 .Top_container {
@@ -15,8 +18,8 @@
     height: 100vh;
     width: 70px;
     background:#fadf74;
-    box-shadow: 10px 0 0 #4a7c9d;
-    border-left: 10px solid #2b343b;
+    box-shadow: 10px 0 0 rgba(146,180,236,1);
+    border-left: 10px solid #4a7c9d;
     overflow-x: hidden;
     transition: width 0.5s;
 }
@@ -106,7 +109,7 @@
 }
 
 .Top_container ul li.active {
-    background: #4a7c9d;
+    background: rgba(146,180,236,1);
 }
 
 .Top_container ul li a {
@@ -127,7 +130,7 @@
     height: 30px;
     background: #fadf74;
     border-radius: 50%;
-    box-shadow: 15px 15px 0 #4a7c9d;
+    box-shadow: 15px 15px 0 rgba(146,180,236,1);
 }
 
 .Top_container ul li.active a::after {
@@ -139,7 +142,7 @@
     height: 30px;
     background: #fadf74;
     border-radius: 50%;
-    box-shadow: 15px -15px 0 #4a7c9d;
+    box-shadow: 15px -15px 0 rgba(146,180,236,1);
 }
 
 .Top_container ul li a .icon {
@@ -170,6 +173,7 @@
 .main_container{
 	float:left;
 	margin-left:15px;
+	white-space: nowrap;
 }
 
 /*푸터영역*/
