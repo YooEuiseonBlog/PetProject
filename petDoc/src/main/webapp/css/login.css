@@ -43,6 +43,7 @@
 	background-color: #3498db;
 	border:none;
 	color:white;
+	cursor: pointer;
 }
 
 @media(max-width:750px){

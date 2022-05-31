@@ -8,7 +8,6 @@ public class MemberVO {
 	private String user_img;
 	private int user_level;
 	
-	
 	public String getUser_id() {
 		return user_id;
 	}
