@@ -9,7 +9,7 @@ public class BoardVO {
 	private int likes;
 	private String wrtiedate;
 	private String filename1;
-	private String baordtype;
+	private String boardtype;
 	
 	public int getBoard_num() {
 		return board_num;
@@ -60,9 +60,9 @@ public class BoardVO {
 		this.filename1 = filename1;
 	}
 	public String getBaordtype() {
-		return baordtype;
+		return boardtype;
 	}
 	public void setBaordtype(String baordtype) {
-		this.baordtype = baordtype;
+		this.boardtype = baordtype;
 	}
 }
