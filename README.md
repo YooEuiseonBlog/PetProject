@@ -34,7 +34,7 @@
 
 ## Credits
 
-[[김귀영](), [김자영](https://github.com/kjy222), [박세윤](), [이채경](), [유의선](https://github.com/leesm316)]
+[[김자영](https://github.com/kjy222), [이채경](), [유의선](https://github.com/leesm316)]
 
 
 ## Contributors
