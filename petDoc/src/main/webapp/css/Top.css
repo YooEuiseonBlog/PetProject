@@ -9,6 +9,7 @@
 
 body{
 	background-color: rgba(146,180,236,1);
+	position: relative;
 }
 /*Top 부분*/
 /*기본*/
@@ -62,9 +63,18 @@ body{
 #Top_info{
 	height:50px;
 	margin-top:10px;
+	opacity:0;
+	transition: opacity 0.3s;
+}
+#Top_info2{
+	height:50px;
 	margin-bottom:20px;
 	opacity:0;
 	transition: opacity 0.3s;
+}
+#Top_info2>a:link,#Top_info2>a:hover,#Top_info2>a:visited{
+	text-decoration: none;
+	color:black;
 }
 
 /*마우스 오버*/
@@ -111,6 +121,7 @@ body{
 .Top_container ul li.active {
     background: rgba(146,180,236,1);
 }
+
 
 .Top_container ul li a {
     position: relative;
@@ -176,10 +187,99 @@ body{
 	white-space: nowrap;
 }
 
+/*index*/
+.swiper {
+        width: 98vw;
+        height: 70vh;
+        position: absolute;
+        margin-left:-7px;
+        margin-top:150px;
+      }
+
+      .swiper-slide {
+        position: relative;
+        font-size: 18px;
+        background: #fadf74;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      
+      .slide1{
+      position: relative;
+      border:1px solid green;
+      width:49vw;
+      height:70vh;
+      margin-left:49vw;
+      padding-top:18vh;
+      padding-left:4vw;
+      }
+      
+      .S_img1{
+      border: 1px solid red;
+      position: absolute;
+      width:24.5vw;
+      height:35vh;
+      left:0;
+      top:0;
+      }
+      
+      .S_img2{
+      border: 1px solid red;
+      position: absolute;
+      width:24.5vw;
+      height:35vh;
+      left:24.5vw;
+      top:0;
+      }
+      
+       .S_img3{
+      border: 1px solid red;
+      position: absolute;
+      width:24.5vw;
+      height:35vh;
+      left:0;
+      bottom:0;
+      }
+      
+        .S_img4{
+      border: 1px solid red;
+      position: absolute;
+      width:24.5vw;
+      height:35vh;
+      left:24.5vw;
+      bottom:0;
+      }
+      
+      .View_a{
+      white-space:nowrap;
+      padding:  2.5vh 0 2.5vh 3vw;
+      background-color: #fff;
+      text-decoration: none;
+      }
+      
+      .View_a2{
+      white-space:nowrap;
+      padding:  2.5vh 1.3vw 2.5vh 1.3vw;
+      background-color: #ffd044;
+      margin-left:3vw;
+      
+      }
+      
+
 /*푸터영역*/
 .bottom_container{
 	float:left;
-	width:100vw;
+	width:99.1vw;
 	height:50px;
 	background-color: gray;
 }

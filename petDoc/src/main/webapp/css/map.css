@@ -1,0 +1,12 @@
+@charset "UTF-8";
+#map {
+	position:absolute;
+	width: 100vw;
+	height: 80vh;
+}
+.getMyPosition {
+	position: absolute;
+	bottom: 100px;
+	left: 500px;
+	z-index: 300;
+}
