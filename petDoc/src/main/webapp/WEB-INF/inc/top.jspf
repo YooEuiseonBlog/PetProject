@@ -16,12 +16,19 @@
     <div class="Top_container">
    		 <div class="Top_logo"><img class="menu_logo" src="/img/logo_1.png"/>PetDoc</div>
         <div class="Top_profile_section"> 
-		<a href="/member/login"><img id = "Top_profile" src="/img/logo_1.png"/></a>
-		<div id= "Top_info"> 로그인</div>
+	        <c:if test="${logStatus != 'Y' }">
+			<a href="/member/login"><img id = "Top_profile" src="/img/logo_1.png"/></a>
+			<div id= "Top_info"> 로그인</div>
+			</c:if>
+			<c:if test="${logStatus == 'Y' }">
+			<img id = "Top_profile" src="${logImg}"/>
+			<div id= "Top_info"> ${logName }&nbsp님</div>
+			<div id= "Top_info2"><a href="#">마이페이지로 이동</a></div>
+			</c:if>
 		</div>
 	        <ul>
 	            <li class="list active">
-	                <a href="#">
+	                <a href="/">
 	                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
 	                    <span class="title">메인</span>
 	                </a>
