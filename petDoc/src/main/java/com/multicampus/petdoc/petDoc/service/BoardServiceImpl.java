@@ -56,7 +56,7 @@ public class BoardServiceImpl implements BoardService{
 	public int BoardFileUpdate(BoardVO vo) {
 		return dao.BoardFileUpdate(vo);
 	}
-	Override
+	@Override
 	public BoardVO getFileName(int board_num) {
 		return dao.getFileName(board_num);
 	}
