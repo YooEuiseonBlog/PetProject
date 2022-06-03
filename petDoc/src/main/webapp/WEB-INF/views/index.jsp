@@ -28,7 +28,7 @@
         	<div class="slide1">
         		<h1 style="margin-bottom:5vh;">공지사항</h1>
         		<h4 style="margin-bottom:8vh;">사이트를 이용하기 위한 수칙입니다</h4>
-        			<a href="#" class="View_a">VIEW MORE <b class="View_a2">></b></a>
+        			<a href="/notice/noticeList" class="View_a">VIEW MORE <b class="View_a2">></b></a>
         	</div>
         </div>
         <div class="swiper-slide">
