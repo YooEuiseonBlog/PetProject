@@ -22,7 +22,7 @@
 	position:relative;
 }
 .noticeListTop li{
-	border-bottom:1px solid rgba(0,0,0,20%);
+	border-bottom:1px solid #92B4EC;
 	width:15%;
 	height:50px;
 	line-height:50px;
@@ -31,7 +31,17 @@
 }
 .noticeList li{
 	width:15%;
+	
 	height:60px;
 	line-height:60px;
 	float:left;
+}
+.noticeModalBtn{
+	width:140px ;
+	height:40px ;
+	background-color:#92B4EC;
+	font-size:16px;
+	font-weight:700;
+	border-radius:8px;
+	letter-spacing:1px;
 }

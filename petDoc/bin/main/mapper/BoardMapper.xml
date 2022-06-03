@@ -74,6 +74,4 @@
     UPDATE board SET likes=#{param2}
     WHERE board_num=#{param1}
     </update>
-    
-    
   </mapper>

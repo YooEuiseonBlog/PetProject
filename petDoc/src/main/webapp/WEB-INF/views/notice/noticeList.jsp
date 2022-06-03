@@ -21,7 +21,7 @@
 			<c:forEach var="vo" items="${noticeList}">
 				<ul class="noticeList">
 					<li>1</li>
-					<button>제목</button>
+					<button class="titleBtn" onclick="">제목</button>
 					<div class="modal">
 						<div class="modal_content">
 							<div class="modalHeader">
