@@ -12,4 +12,13 @@ public class BoardController {
 		mav.setViewName("/notice/noticeList");
 		return mav;
 	}
+	
+	//글 수정
+	@GetMapping("/notice/noticeEdit")
+	public ModelAndView noticeEdit(String type) {
+		ModelAndView mav= new ModelAndView();
+		mav.setViewName("/notice/noticeEdit");
+		return mav;
+	}
+
 }

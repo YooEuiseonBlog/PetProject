@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<meta charset="UTF-8">
-
 
 <link rel="stylesheet" href="/css/notice/noticeList.css" type="text/css">
 
@@ -20,21 +18,21 @@
 			<li>조회수</li>
 			<c:forEach var="vo" items="${noticeList}">
 				<ul class="noticeList">
-					<li>1</li>
-					<button>제목</button>
+					<li>${vo.board_num}</li>
+					<button class="titleBtn" onclick="">제목</button>
 					<div class="modal">
 						<div class="modal_content">
 							<div class="modalHeader">
 								<h3 class="modal_title" id="modalTitle"></h3>
 							</div>
 							<div class="modal_body" id="modalBody"></div>
-							<div class="noticeBottonArea">
+							<div class="noticeBottom">
 								<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
 								&nbsp;&nbsp;&nbsp;
 								<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
 							</div>
 							<div class="modalFooter">
-								<button type="button" class="btnmodalclose">닫기</button>
+								<button type="button" class="modalClose">닫기</button>
 							</div>
 						</div>
 					</div>
