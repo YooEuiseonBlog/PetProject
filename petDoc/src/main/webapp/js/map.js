@@ -1,23 +1,21 @@
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-	mapOption = {
-		center: new kakao.maps.LatLng(37.56646, 126.98121), // 지도의 중심좌표
-		level: 3, // 지도의 확대 레벨
-		mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
-	};
-
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+var mapContainer = document.getElementById('map') // 지도를 표시할 div
 
-// 지도를 생성한다
-var map = new kakao.maps.Map(mapContainer, mapOption);
-
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places();
 
 function locationLoadSuccess(pos) {
 	// 현재 위치 받아오기
 	var currentPos = new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-
+	
+	
+	var mapOption = {
+		center: currentPos, // 지도의 중심좌표
+		level: 3, // 지도의 확대 레벨
+		mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+	};
+	// 지도를 생성한다
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+	
 	// 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
 	map.panTo(currentPos);
 
@@ -25,6 +23,10 @@ function locationLoadSuccess(pos) {
 	var marker = new kakao.maps.Marker({
 		position: currentPos
 	});
+	
+	// 장소 검색 객체를 생성합니다
+	var ps = new kakao.maps.services.Places();
+	
 		
 	// 기존에 마커가 있다면 제거
 	marker.setMap(null);
@@ -50,9 +52,6 @@ function locationLoadSuccess(pos) {
 	    radius : 250,
 	    location: currentPos
 }); 
-	
-	
-
 };
 
 function locationLoadError(pos) {

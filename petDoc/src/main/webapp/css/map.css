@@ -1,12 +1,23 @@
 @charset "UTF-8";
+.map-container {
+	background:red;
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
 #map {
-	position:absolute;
-	width: 100vw;
-	height: 80vh;
+	position:relative;
+	width: 100%;
 }
 .getMyPosition {
-	position: absolute;
-	bottom: 100px;
-	left: 500px;
+	position: absolute !important;
+	top: 75vh;
+	width: 200px;
+	height:  50px;
 	z-index: 300;
+	border-radius: 10%;
+	border-style:none;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
