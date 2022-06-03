@@ -12,8 +12,6 @@ import com.multicampus.petdoc.petDoc.vo.BoardVO;
 public interface BoardDAO {
 	//글 등록
 	public int BoardInsert(BoardVO vo);
-	//글 하나 선택
-	public BoardVO BoardSelect(int board_num);
 	//글 선택(리스트)
 	public List<BoardVO> BoardSelectList(String type);
 	//조회수 증가
