@@ -9,3 +9,10 @@
 <script type="text/javascript" src="/js/map3.js"></script>
 <button type="button" class="getMyPosition" onclick="startPos()">내 현위치 추적</button>
 </div>
+
+<script>
+window.onload=function(){
+	document.querySelector('#menu_1').classList.remove('active');
+	document.querySelector('#menu_4').classList.add('active');
+};
+</script>
