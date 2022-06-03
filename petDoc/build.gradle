@@ -28,8 +28,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/javax.inject/javax.inject
 	implementation 'javax.inject:javax.inject:1'
 	implementation 'com.google.code.gson:gson:2.8.5'
-	// https://mvnrepository.com/artifact/org.locationtech.proj4j/proj4j
-	implementation 'org.locationtech.proj4j:proj4j:1.1.5'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
