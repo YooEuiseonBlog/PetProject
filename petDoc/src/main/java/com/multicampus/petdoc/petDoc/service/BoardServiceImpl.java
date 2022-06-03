@@ -19,10 +19,6 @@ public class BoardServiceImpl implements BoardService{
 			return dao.BoardInsert(vo);
 		}
 		@Override
-		public BoardVO BoardSelect(int board_num) {
-			return dao.BoardSelect(board_num);
-		}
-		@Override
 		public List<BoardVO> BoardSelectList(String type){
 			return dao.BoardSelectList(type);
 		}

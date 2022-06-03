@@ -3,11 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.multicampus.petdoc.petDoc.dao.BoardDAO">
- 	 <!-- 글등록 -->
- 	 <insert id="BoardInsert">
- 	 INSERT INTO board(board_num, user_id, title, content, boardtype, filename1)
- 	 VALUES(#{board_num),#(user_id),#(title),#(content),#{boardtype},#{filename1})
- 	 </insert>
+ 	<!-- 글등록 -->
+  	<insert id="BoardInsert">
+  	INSERT INTO board(board_num, user_id, title, content, boardtype, filename1)
+  	VALUES(#{board_num},#{user_id}, #{title}, #{content}, #{boardtype}, #{filename1})
+  	</insert>
  	 <!-- 글목록 불러오기 -->
  	 <select id="BoardSelectList" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
  	 SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
@@ -20,11 +20,12 @@
  	 </select>
   	<!--  글 하나 선택 -->
   	<select id="BoardView" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
-  	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes
+  	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
   		   B.user_id, B.user_img, B_user_level,
   		   (select count(reply.replyno) from reply where A.board_num=reply.board_num) as reviewcnt
-  	FROM board A join member B on A.user_id=B.user_id
-  	WHERE board_num = #{param1}
+  	FROM board A, member B
+  	WHERE A.user_id=B.user_id 
+  	AND board_num = #{param1}
   	</select>
   	<!-- 글 수정 -->
     <update id="BoardUpdate">
@@ -35,7 +36,7 @@
   	<delete id="BoardDelete">
  		DELETE FROM board WHERE board_num=#{param1} AND user_id=#{param2}
  	</delete>
-  	<select id="getFileName" resultType="com.campus.myapp.vo.BoardVO">
+  	<select id="getFileName" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
     	SELECT filename1 FROM board 
     	WHERE board_num=#{board_num}
     </select>
