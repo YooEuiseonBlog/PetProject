@@ -4,7 +4,7 @@
 	
 }
 /*중*/
-@media(min-width:1000px){
+@media(min-width:900px){
 .join_container{
 	position:absolute;
 	width: 85%;
@@ -54,8 +54,70 @@
 
 }
 /*한페이지 짜리*/
-@media(max-width:1000px){
-	
+@media(max-width:900px){
+.Top_container {
+	float:left;
+    position: relative;
+    height: 1230px;
+    width: 70px;
+    background:#fadf74;
+    box-shadow: 10px 0 0 rgba(146,180,236,1);
+    border-left: 10px solid #4a7c9d;
+    overflow-x: hidden;
+    transition: width 0.5s;
+}
+
+.join_container{
+	position:absolute;
+	width: 600px;
+	height:1170px;
+	background-color: #ffe26c;
+	margin-top:30px;
+	margin-left:40px;
+	margin-bottom:30px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.join_page{
+	padding:15px 30px 15px 30px;
+	width:550px;
+	height:550px;
+	background-color: white;
+	border-radius: 20px;
+	position: absolute;
+}
+
+#page1{
+	left:25px;
+	top:20px;
+}
+
+#page2{
+	padding-top:30px;
+	padding-left:30px;
+	left:25px;
+	bottom: 20px;
+	overflow: hidden;
+}
+
+#page_center1{
+	position: absolute;
+	width:100px;
+	left: 50px;
+	top:519px;
+	transform: rotate(90deg);
+	z-index: 30;
+}
+
+#page_center2{
+	position: absolute;
+	width:100px;
+	right: 50px;
+	top:519px;
+	transform: rotate(90deg);
+	z-index: 30;
+}
 }
 
 
