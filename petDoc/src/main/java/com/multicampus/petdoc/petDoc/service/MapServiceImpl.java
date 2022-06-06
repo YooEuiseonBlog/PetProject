@@ -18,4 +18,6 @@ public class MapServiceImpl implements MapService {
 	public List<MapVO> filterHos(MapVO mapVO) {
 		return dao.filterHos(mapVO);
 	}
+
+	
 }

@@ -1,8 +1,6 @@
 package com.multicampus.petdoc.petDoc.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -27,7 +25,6 @@ public class mapController {
 	
 	@PostMapping("/sendMapping")
 	public List<MapVO> hosInfo(MapVO mapVO) {
-		Map<String, Object> map = new HashMap<String, Object>();
 		service.filterHos(mapVO);
 		System.out.println(mapVO.getWtmX());
 		System.out.println(mapVO.getWtmY());
