@@ -4,7 +4,87 @@
 <link rel="stylesheet" href="/css/notice/noticeList.css" type="text/css">
 
 <title>공지사항</title>
+<style>
+	.noticeContainer{
+	width:100%;
+	height:855px;
+	position:relative;
+	text-align:center;
+}
+.noticeBtn{
+	width:140px;
+	height:40px;
+	background-color:#92B4EC;
+	font-size:16px;
+	font-weight:700;
+	border-radius:8px;
+}
 
+.noticeBoard{
+	margin:0 auto;
+	width:1200px;
+	height:650px;
+	position:relative;
+}
+.noticeListTop li{
+	border-bottom:1px solid #92B4EC;
+	width:15%;
+	height:50px;
+	line-height:50px;
+	float:left;
+	font-size:1.5em;
+}
+.noticeList li{
+	width:15%;
+	height:60px;
+	line-height:60px;
+	float:left;
+}
+.noticeModalBtn{
+	width:140px ;
+	height:40px ;
+	background-color:#92B4EC;
+	font-size:16px;
+	font-weight:700;
+	border-radius:8px;
+	letter-spacing:1px;
+}
+
+/*======모달=======*/
+.modal-content {
+height: 100%;
+overflow:auto;
+}
+.modalHeader{
+	height:50px;
+}
+.modalBody{
+	font-size:1.7em;
+	padding:10px;
+	height:300px;
+	overflow:auto;
+	overflow-x: hidden;
+}
+.noticeBottom{
+	margin:20px 0px;
+}
+.noticeModalBtn{
+	width:140px !important;
+	height:40px !important;
+	background-color:#92B4EC;
+	font-size:16px;
+	font-weight:700;
+	border-radius:8px;
+	letter-spacing:1px;
+}
+.modalFooter{
+	float:left;
+	height:70px;
+}
+.modalClose{
+	font-size:1.7em;
+}
+</style>
 <div class="noticeContainer">
 	<h1>공지사항</h1>
 	<button class="noticeBtn" onclick="">공지사항 등록</button>
