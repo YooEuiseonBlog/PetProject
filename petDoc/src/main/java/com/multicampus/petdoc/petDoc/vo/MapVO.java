@@ -13,6 +13,12 @@ public class MapVO {
 	private String hos_name;
 	private double hos_areaX;
 	private double hos_areaY;
+	
+	// 현재 위치 x, y좌표
+	private double wtmX;
+	private double wtmY;
+	
+	// getter, setter
 	public int getHos_no() {
 		return hos_no;
 	}
@@ -85,9 +91,16 @@ public class MapVO {
 	public void setHos_areaY(double hos_areaY) {
 		this.hos_areaY = hos_areaY;
 	}
-	
-	
-	
-	
-	
+	public double getWtmX() {
+		return wtmX;
+	}
+	public void setWtmX(double wtmX) {
+		this.wtmX = wtmX;
+	}
+	public double getWtmY() {
+		return wtmY;
+	}
+	public void setWtmY(double wtmY) {
+		this.wtmY = wtmY;
+	}
 }
