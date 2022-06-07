@@ -10,14 +10,11 @@
 	</select>
 	
 	<select id="memberSelect" resultType="com.multicampus.petdoc.petDoc.vo.MemberVO">
-		select user_id, user_name, user_img, user_img, user_pwd from member
+		select user_id, user_name, user_img, user_img, user_pwd, user_addr from member
 		where user_id=#{param1}
 	</select>
 	<update id="memberUpdate">
 		update member set user_name=#{user_name}
-		<if test="profileimage != null">
-		, user_img=#{user_img}
-		</if>
 		, user_pwd=#{user_pwd}, user_addr=#{user_addr}
 		where user_id=#{user_id}
 	</update>
@@ -47,5 +44,15 @@
 	<delete id="memberDelete">
 		delete from member where user_id=#{user_id}
 	</delete>
+	
+	<select id="getFileName" resultType="com.multicampus.petdoc.petDoc.vo.MemberVO">
+    	SELECT user_img FROM member
+    	WHERE user_id=#{user_id}
+    </select>
+    
+    <update id="changeProfileImg">
+ 		UPDATE member 
+ 		SET user_img=#{user_img} WHERE user_id=#{user_id}
+ 	</update>
 
 </mapper>
