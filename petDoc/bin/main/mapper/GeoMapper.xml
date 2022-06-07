@@ -6,6 +6,6 @@
 <mapper namespace="com.multicampus.petdoc.petDoc.dao.MapDAO">
 	<select id="filterHos" resultType="com.multicampus.petdoc.petDoc.vo.MapVO">
 		select hos_name, hos_areaX, hos_areaY from hos_map
-		where hos_areaX between ${wtmX-2000} and ${wtmX+2000} and hos_areaY between ${wtmY-2000} and ${wtmY+2000}
+		where hos_areaX between ${wtmX-3000} and ${wtmX+3000} and hos_areaY between ${wtmY-3000} and ${wtmY+3000}
 	</select>
 </mapper>
