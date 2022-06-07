@@ -24,6 +24,7 @@
 #info_Area{
 	float:left;
 	width:70%;
+	overflow: auto;
 }
 #info_Area2{
 	position:relative;
@@ -36,16 +37,20 @@
 	width:17vw;
 	margin-left:10%;
 	margin-top:10%;
+	border:2px solid black;
 	
 }
-#UserInfoShow{
-	padding:30px 20px;
+#noticeBoardShow{
+	padding:10px 5px;
+	display:none;
 }
-#UserBoardShow{
+#BoardMShow{
+	padding:10px 5px;
 	display:none;
 }
 
-#UserReplyShow{
+#userMShow{
+	padding:10px 5px;
 	display:none;
 }
 

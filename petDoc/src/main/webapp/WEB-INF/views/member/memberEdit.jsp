@@ -176,7 +176,7 @@ $(()=>{
 				<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" onclick="foldDaumPostcode()" alt="접기 버튼">
 			</div>
 			<div id="user_profileimg">프로필 이미지<br>
-			 	 <img class="img3" id="img_section1" src="${vo.user_img}"><br/>
+			 	 <img class="img3" id="img_section1" src="/upload/${vo.user_img}"><br/>
                  <input type="text" id="file_route01" disabled="disabled" value="파일 선택" >
                  <label for="upload_file01" class="button03">업로드</label>
                  <input type="file" id="upload_file01" name="filename"  accept="image/*" style="position:absolute; clip:rect(0, 0, 0, 0);">

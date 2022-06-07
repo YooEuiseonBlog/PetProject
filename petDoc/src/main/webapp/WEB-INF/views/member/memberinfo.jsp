@@ -33,7 +33,7 @@ $(document).ready(function(){
 					<div id="UserReplyShow"><%@ include file="/WEB-INF/views/member/userReply.jsp" %></div>
 				</div>
 				<div id="info_Area2">
-					<img src="/img/logo_1.png"/>
+					<img src="/upload/${vo.user_img}"/>
 				</div>
 			</div>
 </div>
