@@ -24,6 +24,8 @@ spring:
   servlet:  #multipart
     multipart:
       enabled: true
+      file-size-threshold: 10MB
+      location: /Users/alsgu/git/PetProject/petDoc/src/main/webapp/upload #저장될 위치 이거 바뀔꺼임
       max-file-size: 100MB
       max-request-size: 100MB
  
