@@ -2,12 +2,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <link rel="stylesheet" href="/css/notice/noticeList.css" type="text/css">
+<script src="/js/notice/noticeList.js"></script>
 
 <title>공지사항</title>
 
 <div class="noticeContainer">
-	<h1>공지사항</h1>
-	<button class="noticeBtn" onclick="">공지사항 등록</button>
+	<h1 class="noticeTitle">공지사항</h1>
+	<div class="noticeBtnArea">
+		<button class="noticeBtn" onclick="window.location.href='/notice/noticeWrite'">공지사항 등록</button>
+		<br/>
+	</div>
 	<br/>
 	
 	<div class="noticeBoard">
@@ -19,26 +23,26 @@
 			<c:forEach var="vo" items="${noticeList}">
 				<ul class="noticeList">
 					<li>${vo.board_num}</li>
-					<button class="titleBtn" onclick="">제목</button>
-					<div class="modal">
-						<div class="modal_content">
-							<div class="modalHeader">
-								<h3 class="modal_title" id="modalTitle"></h3>
-							</div>
-							<div class="modal_body" id="modalBody"></div>
-							<div class="noticeBottom">
-								<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
-								&nbsp;&nbsp;&nbsp;
-								<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
-							</div>
-							<div class="modalFooter">
-								<button type="button" class="modalClose">닫기</button>
-							</div>
+					<li data-toggle="modal" data-target="#noticeModal">${vo.title}</li>
+					<li>${vo.write_date}</li>
+					<li>${vo.hit}</li>
+				</ul>
+				<div class="modal" id="noticeModal"> 
+					<div class="modal_content">
+						<div class="modalHeader">
+							<h3 class="modal_title" id="modalTitle"></h3>
+						</div>
+						<div class="modal_body" id="modalBody"></div>
+						<div class="noticeBottom">
+							<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
+							&nbsp;&nbsp;&nbsp;
+							<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
+						</div>
+						<div class="modalFooter">
+							<button type="button" class="modalClose" data-dismiss="modal">닫기</button>
 						</div>
 					</div>
-					<li>작성일</li>
-					<li>조회수</li>
-				</ul>
+				</div>
 			</c:forEach>
 		</ul>
 	</div>

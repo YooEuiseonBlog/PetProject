@@ -33,4 +33,7 @@ public interface MemberDAO {
 		
 		// 정지 해제
 		public int backtoNormal(String user_id);
+		
+		public MemberVO getFileName(String user_id);
+		public int changeProfileImg(MemberVO vo);
 }

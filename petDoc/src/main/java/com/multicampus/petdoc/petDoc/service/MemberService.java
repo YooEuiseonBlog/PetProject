@@ -14,4 +14,6 @@ public interface MemberService {
 			public MemberVO readMember(String user_id);
 			public int memberDelete(MemberVO vo);
 			public int backtoNormal(String user_id);
+			public MemberVO getFileName(String user_id);
+			public int changeProfileImg(MemberVO vo);
 }
