@@ -2,92 +2,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <link rel="stylesheet" href="/css/notice/noticeList.css" type="text/css">
+<script src="/js/notice/noticeList.js"></script>
 
 <title>공지사항</title>
-<style>
-	.noticeContainer{
-	width:100%;
-	height:855px;
-	position:relative;
-	text-align:center;
-}
-.noticeBtn{
-	width:140px;
-	height:40px;
-	background-color:#92B4EC;
-	font-size:16px;
-	font-weight:700;
-	border-radius:8px;
-}
 
-.noticeBoard{
-	margin:0 auto;
-	width:1200px;
-	height:650px;
-	position:relative;
-}
-.noticeListTop li{
-	border-bottom:1px solid #92B4EC;
-	width:15%;
-	height:50px;
-	line-height:50px;
-	float:left;
-	font-size:1.5em;
-}
-.noticeList li{
-	width:15%;
-	height:60px;
-	line-height:60px;
-	float:left;
-}
-.noticeModalBtn{
-	width:140px ;
-	height:40px ;
-	background-color:#92B4EC;
-	font-size:16px;
-	font-weight:700;
-	border-radius:8px;
-	letter-spacing:1px;
-}
-
-/*======모달=======*/
-.modal-content {
-height: 100%;
-overflow:auto;
-}
-.modalHeader{
-	height:50px;
-}
-.modalBody{
-	font-size:1.7em;
-	padding:10px;
-	height:300px;
-	overflow:auto;
-	overflow-x: hidden;
-}
-.noticeBottom{
-	margin:20px 0px;
-}
-.noticeModalBtn{
-	width:140px !important;
-	height:40px !important;
-	background-color:#92B4EC;
-	font-size:16px;
-	font-weight:700;
-	border-radius:8px;
-	letter-spacing:1px;
-}
-.modalFooter{
-	float:left;
-	height:70px;
-}
-.modalClose{
-	font-size:1.7em;
-}
-</style>
 <div class="noticeContainer">
-	<h1>공지사항</h1>
-	<button class="noticeBtn" onclick="">공지사항 등록</button>
+	<h1 class="noticeTitle">공지사항</h1>
+	<div class="noticeBtnArea">
+		<button class="noticeBtn" onclick="window.location.href='/notice/noticeWrite'">공지사항 등록</button>
+		<br/>
+	</div>
 	<br/>
 	
 	<div class="noticeBoard">
@@ -99,26 +23,26 @@ overflow:auto;
 			<c:forEach var="vo" items="${noticeList}">
 				<ul class="noticeList">
 					<li>${vo.board_num}</li>
-					<button class="titleBtn" onclick="">제목</button>
-					<div class="modal">
-						<div class="modal_content">
-							<div class="modalHeader">
-								<h3 class="modal_title" id="modalTitle"></h3>
-							</div>
-							<div class="modal_body" id="modalBody"></div>
-							<div class="noticeBottom">
-								<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
-								&nbsp;&nbsp;&nbsp;
-								<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
-							</div>
-							<div class="modalFooter">
-								<button type="button" class="modalClose">닫기</button>
-							</div>
+					<li data-toggle="modal" data-target="#noticeModal">${vo.title}</li>
+					<li>${vo.write_date}</li>
+					<li>${vo.hit}</li>
+				</ul>
+				<div class="modal" id="noticeModal"> 
+					<div class="modal_content">
+						<div class="modalHeader">
+							<h3 class="modal_title" id="modalTitle"></h3>
+						</div>
+						<div class="modal_body" id="modalBody"></div>
+						<div class="noticeBottom">
+							<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
+							&nbsp;&nbsp;&nbsp;
+							<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
+						</div>
+						<div class="modalFooter">
+							<button type="button" class="modalClose" data-dismiss="modal">닫기</button>
 						</div>
 					</div>
-					<li>작성일</li>
-					<li>조회수</li>
-				</ul>
+				</div>
 			</c:forEach>
 		</ul>
 	</div>
