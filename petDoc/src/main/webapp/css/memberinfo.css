@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+
+.info_container{
+	position:relative;
+	margin-top:5%;
+	margin-left:5%;
+	padding:20px;
+	background-color: white;
+	width:80vw;
+	height:76vh;
+	border:25px solid #ffe26c;
+	border-radius: 20px;
+}
+
+.info_button1{
+	border:none;
+	width:6vw;
+	height:4vh;
+	background-color: #4a7c9d;
+	color:white;
+}
+
+#info_Area{
+	float:left;
+	width:70%;
+}
+#info_Area2{
+	position:relative;
+	float:left;
+	width:30%;
+	
+	background-color: yellow;
+}
+
+#info_Area2>img{
+	border-radius: 100%;
+	width:17vw;
+	margin-left:10%;
+	margin-top:10%;
+	
+}
+#UserInfoShow{
+	padding:30px 20px;
+}
+#UserBoardShow{
+	display:none;
+}
+
+#UserReplyShow{
+	display:none;
+}
+

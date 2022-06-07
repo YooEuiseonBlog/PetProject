@@ -10,7 +10,7 @@
 	width: 85%;
 	height: 85vh;
 	background-color: #ffe26c;
-	top:5%;
+	margin-top:5%;
 	margin-left:5%;
 	border-radius: 20px;
 	overflow: hidden;
@@ -51,6 +51,16 @@
 	bottom:5%;
 	z-index: 30;
 }
+#user_profileimg{
+	padding-top:50px;
+	text-align: center;
+}
+#user_profileimg>img{
+	width:14vw;
+	border-radius: 100%;
+}
+
+
 
 }
 /*한페이지 짜리*/
@@ -118,8 +128,17 @@
 	transform: rotate(90deg);
 	z-index: 30;
 }
+
+#user_profileimg{
+	padding-top:50px;
+	text-align: center;
+}
+#user_profileimg>img{
+	width:300px;
+	border-radius: 100%;
 }
 
+}
 
 /*입력란*/
 .input02{

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.multicampus.petdoc.petDoc.dao.MapDAO">
+	<select id="filterHos" resultType="com.multicampus.petdoc.petDoc.vo.MapVO">
+		select hos_name, hos_areaX, hos_areaY from hos_map
+		where hos_areaX between ${wtmX-2000} and ${wtmX+2000} and hos_areaY between ${wtmY-2000} and ${wtmY+2000}
+	</select>
+</mapper>
