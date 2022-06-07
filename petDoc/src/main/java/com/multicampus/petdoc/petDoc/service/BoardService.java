@@ -24,5 +24,4 @@ public interface BoardService {
 	public int BoardFileUpdate(BoardVO vo);
 	public BoardVO getFileName(int board_num);
 	public int BoardDelete(int board_num, String user_id);
-
 }

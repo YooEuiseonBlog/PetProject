@@ -59,7 +59,7 @@ a, a:visited, a:hover, a:active{
 	line-height:60px;
 	float:left;
 }
-/*======모달=======*/
+
 .modal-content {
 	width: 100%;
 	max-width:1000px;
@@ -78,7 +78,7 @@ a, a:visited, a:hover, a:active{
 	overflow:auto;
 	overflow-x: hidden;
 }
-.noticeBottom{
+.noticeBotton{
 	margin:20px 0px;
 }
 .noticeModalBtn{

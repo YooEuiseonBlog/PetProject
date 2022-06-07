@@ -8,10 +8,12 @@
 
 <div class="noticeContainer">
 	<h1 class="noticeTitle">공지사항</h1>
+	<c:if test="${logPermission=='admin'}">
 	<div class="noticeBtnArea">
-		<button class="noticeBtn" onclick="window.location.href='/notice/noticeWrite'">공지사항 등록</button>
+		<button class="noticeBtn" onclick="">공지사항 등록</button>
 		<br/>
 	</div>
+	</c:if>
 	<br/>
 	
 	<div class="noticeBoard">
@@ -33,10 +35,12 @@
 							<h3 class="modal_title" id="modalTitle"></h3>
 						</div>
 						<div class="modal_body" id="modalBody"></div>
-						<div class="noticeBottom">
-							<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
-							&nbsp;&nbsp;&nbsp;
-							<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
+						<div class="noticeBotton">
+							<c:if test="${logPermission=='admin'}">
+								<button class="noticeModalBtn" id="modalNoticeEdit">수정</button>
+								&nbsp;&nbsp;&nbsp;
+								<button class="noticeModalBtn" id="modalNoticeDel">삭제</button>
+							</c:if>
 						</div>
 						<div class="modalFooter">
 							<button type="button" class="modalClose" data-dismiss="modal">닫기</button>
