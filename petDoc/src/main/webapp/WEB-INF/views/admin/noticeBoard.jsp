@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/admin.css" type="text/css"/>
 
-<div class="container">
+<div class="containerN">
 	<div class="Menu_Bar_A">
 		<h1 class="Menu_title">공지사항</h1>
 	</div>
@@ -36,7 +36,7 @@
 			</form>
 		</div>
 	</div>
-	<a href="" class="info_button2">공지사항 등록</a>
+	<a href="/notice/noticeWrite" class="info_button2">공지사항 등록</a>
 </div>
 
 <script>

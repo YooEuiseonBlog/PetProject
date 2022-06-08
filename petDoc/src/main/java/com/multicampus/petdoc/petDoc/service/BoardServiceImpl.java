@@ -20,8 +20,8 @@ public class BoardServiceImpl implements BoardService{
 		return dao.BoardInsert(vo);
 	}
 	@Override
-	public List<BoardVO> BoardSelectList(String type){
-		return dao.BoardSelectList(type);
+	public List<BoardVO> BoardSelectList(String type, PagingVO pvo){
+		return dao.BoardSelectList(type, pvo);
 	}
 	@Override
 	public List<BoardVO> BoardSelectListAjax(String type, PagingVO pVO){
@@ -72,6 +72,10 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public int BoardDelete(int board_num, String user_id) {
 		return dao.BoardDelete(board_num, user_id);
+	}
+	@Override 
+	public int totalRecord() { 
+		return dao.totalRecord(); 
 	}
 	@Override
 	public int BoardDeleteAdmin(int board_num) {

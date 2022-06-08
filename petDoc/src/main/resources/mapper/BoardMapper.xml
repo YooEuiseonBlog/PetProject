@@ -15,12 +15,13 @@
  	 		FROM board A, member B
  	 		WHERE A.user_id = B.user_id
  	 		AND A.boardtype=#{param1}
- 	 		ORDER by board_num desc
+ 	 		ORDER by board_num desc 
+ 	 		LIMIT ${param2.onePageRecord} offset ${param2.offsetIndex}
  	 </select>
   	<!--  글 하나 선택 -->
   	<select id="BoardView" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
   	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
-  		   B.user_id, B.user_img, B.user_level
+  		   B.user_id, B.user_img, B_user_level
   	FROM board A, member B
   	WHERE A.user_id=B.user_id 
   	AND board_num = #{param1} AND boardtype=#{param2}
@@ -80,6 +81,9 @@
     UPDATE board SET likes=#{param2}
     WHERE board_num=#{param1}
     </update>
+    <select id="totalRecord" resultType="int">
+		SELECT count(board_num) from board
+	</select>
     <!--  글목록 불러오기 ajax용 -->
   	<select id="BoardSelectListAjax" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
   	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate,A.likes,

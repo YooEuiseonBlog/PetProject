@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/admin.css" type="text/css"/>
 
-<div class="container">
+<div class="containerB">
 	<div class="Menu_Bar_A">
 		<h1 class="Menu_title">작성글 관리</h1>
 	</div>

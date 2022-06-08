@@ -14,9 +14,10 @@ public interface BoardDAO {
 	//글 등록
 	public int BoardInsert(BoardVO vo);
 	//글 선택(리스트)
-	public List<BoardVO> BoardSelectList(String type);
+	public List<BoardVO> BoardSelectList(String type, PagingVO pvo);
 	public List<BoardVO> BoardSelectListAjax(String type, PagingVO pVO);
 	public List<BoardVO> boardSearch(String searchKey, String string, int start, int end, String boardtype);
+	
 	//조회수 증가
 	public void hitCount(int board_num);
 	public void LikeInsert(int board_num, String user_id);
@@ -37,9 +38,6 @@ public interface BoardDAO {
 	
 	public String getType(int board_num);
 	
-	
-	
-	
-	
+	public int totalRecord();
 
 }
