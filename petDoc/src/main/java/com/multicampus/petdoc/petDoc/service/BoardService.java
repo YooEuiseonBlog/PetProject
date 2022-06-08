@@ -2,12 +2,9 @@ package com.multicampus.petdoc.petDoc.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.multicampus.petdoc.petDoc.vo.BoardVO;
 import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
-@Service
 public interface BoardService {
 	//글 등록
 	public int BoardInsert(BoardVO vo);
