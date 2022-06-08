@@ -1,14 +1,13 @@
 .noticeWriteContainer{
 	margin:0 auto;
-	margin-top:100px;
-	height:85%;
-	min-height:800px;
-	text-align:center;	
-	position:relative;
+	margin-top:10px;
+	margin-left:5vw;
+	height:90vh;
+	position:absolute;
 	background-color: white;
-}
-.noticeTitle{
-	margin-bottom:40px;
+	padding:20px;
+	border-radius: 30px;
+	border: 15px solid #ffe26c;
 }
 .noticeWriteTitleContainer{
 	width:1000px; 
@@ -16,40 +15,42 @@
 	line-height:40px;
 	margin:0 auto;
 	margin-bottom:40px;
-	padding-left:30px;
 }
 .noticeWriteTitle{
-	background-color:rgba(85, 76, 66, 80%);
+	background-color:#FAD293;
 	font-size:1.8em;
 	color:white;
 	border-radius:10px;
 }
 .noticeWriteTitleBox{
-	width:600px;
+	width:1000px;
 	height:40px;
 	border:0.5px solid rgba(85, 76, 66, 80%);
 	border-radius:10px;
 	font-size:1.5em;
-	padding-left:10px;
+
 }
 .noticeTextArea{
 	width:1000px;
 	margin:0 auto;
+	resize: none;
 }
 .ck.ckeditor{
 	min-width:1000px;
 }
 .ck-editor__editable{
 	max-width:1000px;
-	min-height:550px;
+	min-height:350px;
 }
 .registBtn{
+	margin-top:2vh;
 	width:100px;
 	height:40px;
 	letter-spacing:1px;
+	border:none;
 	border-radius:10px;
-	background-color:rgb(230, 223, 215);
-	color:rgba(85, 76, 66, 80%);
+	background-color:#4a7c9d;
+	color:white;
 	font-size:16px;
 	font-weight:700;
 }
