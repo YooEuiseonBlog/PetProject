@@ -35,6 +35,12 @@ import com.multicampus.petdoc.petDoc.vo.MemberVO;
 public class MemberController {
 	@Inject
 	MemberService service;
+	
+	@Value("${image.upload.path}")
+	private String uploadPath;
+
+	@Value("${resource.handler}")
+	private String resourceHandler;
 
 	//로그인페이지로 이동
 	@GetMapping("login")
@@ -69,7 +75,7 @@ public class MemberController {
 			
 			session.invalidate();
 			ModelAndView mav = new ModelAndView();
-			mav.setViewName("redirect:/");
+			mav.setViewName("/member/login");
 			return mav;
 		}
 	
@@ -191,6 +197,7 @@ public class MemberController {
 								newMf.transferTo(f);
 								newUpload.add(newUploadFilename);
 								System.out.println(newUploadFilename);
+								fileDelete(path, dbfileVO.getUser_img());
 								dbfileVO.setUser_img(newUploadFilename);
 						}
 					}//for
@@ -201,8 +208,14 @@ public class MemberController {
 				service.memberUpdate(vo);
 				service.changeProfileImg(dbfileVO);
 				System.out.println(dbfileVO);
+				
+				MemberVO vo2 = service.loginCheck(vo);
+				session.setAttribute("logId", vo2.getUser_id());
+				session.setAttribute("logName", vo2.getUser_name());
+				session.setAttribute("logImg", vo2.getUser_img());
+				
 				String msg = "<script>";
-				msg += "alert('회원정보 수정 완료.);";
+				msg += "alert('회원정보 수정 완료.');";
 				msg += "location.href='/member/memberinfo';</script>";
 
 				entity = new ResponseEntity<String>(msg, headers, HttpStatus.OK);

@@ -12,11 +12,14 @@ const Top1 = document.querySelector('.Top_logo');
 const Top2 = document.querySelector('#Top_profile');
 const Top3 = document.querySelector('#Top_info');  
 const Top4 = document.querySelector('#Top_info2');  
+const Top5 = document.querySelector('#Top_info3');  
  function changeOpacity1(){
 	Top1.style.opacity = "0.0";
 	Top2.style.opacity = "0.0";
 	Top3.style.opacity = "0.0";
 	Top4.style.opacity = "0.0";
+	Top5.style.opacity = "0.0";
+	Top5.style.display = "none";
 }
 
 function changeOpacity2(){
@@ -24,6 +27,8 @@ function changeOpacity2(){
 	Top2.style.opacity = "1";
 	Top3.style.opacity = "1";
 	Top4.style.opacity = "1";
+	Top5.style.opacity = "1";
+	Top5.style.display = "block";
 }
 
 const con = document.querySelector('.Top_container');

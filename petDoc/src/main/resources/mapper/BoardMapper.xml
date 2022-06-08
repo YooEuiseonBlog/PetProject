@@ -11,8 +11,7 @@
  	 <!-- 글목록 불러오기 -->
  	 <select id="BoardSelectList" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
  	 SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
- 	 		A.filename1, B.user_img, B.user_level, B.user_name,
- 	 		(select count(reply.replyno) from where A.board_num = reply.board_num) as reviewcnt
+ 	 		A.filename1, B.user_img, B.user_level, B.user_name
  	 		FROM board A, member B
  	 		WHERE A.user_id = B.user_id
  	 		AND A.boardtype=#{param1}
@@ -21,11 +20,10 @@
   	<!--  글 하나 선택 -->
   	<select id="BoardView" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
   	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
-  		   B.user_id, B.user_img, B_user_level,
-  		   (select count(reply.replyno) from reply where A.board_num=reply.board_num) as reviewcnt
+  		   B.user_id, B.user_img, B.user_level
   	FROM board A, member B
   	WHERE A.user_id=B.user_id 
-  	AND board_num = #{param1}
+  	AND board_num = #{param1} AND boardtype=#{param2}
   	</select>
   	<!-- 글 수정 -->
     <update id="BoardUpdate">
@@ -36,6 +34,9 @@
   	<delete id="BoardDelete">
  		DELETE FROM board WHERE board_num=#{param1} AND user_id=#{param2}
  	</delete>
+ 	<delete id="BoardDeleteAdmin">
+ 		DELETE FROM board WHERE board_num=#{param1}
+ 	</delete>
   	<select id="getFileName" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
     	SELECT filename1 FROM board 
     	WHERE board_num=#{board_num}
@@ -44,6 +45,10 @@
   		UPDATE board SET filename1=#{filename1}
 		WHERE board_num=#{board_num}
   	</update>
+  	<select id="getType" resultType="String">
+  		SELECT boardtype FROM board
+  		WHERE board_num=${param1}
+  	</select>
   	
   	<!--  조회수 증가 -->
   	<update id="hitCount">
@@ -75,4 +80,33 @@
     UPDATE board SET likes=#{param2}
     WHERE board_num=#{param1}
     </update>
+    <!--  글목록 불러오기 ajax용 -->
+  	<select id="BoardSelectListAjax" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
+  	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate,A.likes,
+  		   A.filename1, B.user_img, B.user_level, B.user_name
+  	FROM   board A, member B
+  	WHERE  A.user_id=B.user_id
+	AND    A.boardtype=#{param1}
+	ORDER by board_num desc 
+	LIMIT 	 #{param2.start}, #{param2.end}
+  	</select>
+  	<select id="boardSearch" resultType="BoardVO">
+      SELECT   A.board_num, A.title, A.user_id, A.writedate, A.content,A.filename1, A.hit, A.likes,B.user_img, B.user_name
+      FROM     board A, member B
+      WHERE    A.user_id=B.user_id
+      AND      A.boardtype=#{param5}
+      <choose>
+         <when test="param1.equals('title')">
+            AND A.title like #{param2}
+         </when>
+         <when test="param1.equals('content')">
+            AND A.content like #{param2}
+         </when>
+         <when test="param1.equals('username')">
+            AND B.username like #{param2}
+         </when>
+      </choose>
+      ORDER BY A.board_num DESC
+      LIMIT #{param3}, #{param4}
+     </select>
   </mapper>
