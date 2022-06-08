@@ -30,9 +30,6 @@ public interface BoardDAO {
 	public BoardVO getFileName(int board_num);
 	public int BoardDelete(int board_num, String user_id);
 	
-	
-	
-	
-	
+	public int totalRecord();
 
 }

@@ -64,4 +64,8 @@ public class BoardServiceImpl implements BoardService{
 	public int BoardDelete(int board_num, String user_id) {
 		return dao.BoardDelete(board_num, user_id);
 	}
+	
+	@Override public int totalRecord() { 
+		return dao.totalRecord(); 
+	}
 }

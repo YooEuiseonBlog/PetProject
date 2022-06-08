@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.multicampus.petdoc.petDoc.service.BoardService;
 import com.multicampus.petdoc.petDoc.vo.BoardVO;
+import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
 
 @Controller
@@ -22,9 +23,15 @@ public class BoardController {
 	ModelAndView mav= new ModelAndView();
 	
 	@GetMapping("/notice/noticeList")
-	public ModelAndView noticeList(String type){
-		mav.addObject("vo", bservice.BoardSelectList("notice"));
+	public ModelAndView noticeList(String type,  PagingVO pvo){
+		mav.addObject("list", bservice.BoardSelectList("notice"));
 		mav.setViewName("/notice/noticeList");
+		pvo.setOnePageRecord(4);
+		pvo.setOnePageCount(5);
+		pvo.setTotalRecord(bservice.totalRecord());
+		pvo.setOffsetIndex(pvo.getPageNum(), 4);
+		System.out.println(pvo.getOffsetIndex());
+
 		return mav;
 	}
 	

@@ -60,6 +60,14 @@ a, a:visited, a:hover, a:active{
 	float:left;
 }
 
+.modal-dialog {
+	width: 100%;
+	max-width:1000px;
+	height: 70%;
+	padding: 0;
+	margin:0 auto;
+	top:10%;
+}
 .modal-content {
 	width: 100%;
 	max-width:1000px;
@@ -82,8 +90,8 @@ a, a:visited, a:hover, a:active{
 	margin:20px 0px;
 }
 .noticeModalBtn{
-	width:140px !important;
-	height:40px !important;
+	width:140px;
+	height:40px;
 	background-color:#92B4EC;
 	font-size:16px;
 	font-weight:700;

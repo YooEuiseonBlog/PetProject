@@ -11,8 +11,7 @@
  	 <!-- 글목록 불러오기 -->
  	 <select id="BoardSelectList" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
  	 SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
- 	 		A.filename1, B.user_img, B.user_level, B.user_name,
- 	 		(select count(reply.replyno) from where A.board_num = reply.board_num) as reviewcnt
+ 	 		A.filename1, B.user_img, B.user_level, B.user_name
  	 		FROM board A, member B
  	 		WHERE A.user_id = B.user_id
  	 		AND A.boardtype=#{param1}
@@ -21,8 +20,7 @@
   	<!--  글 하나 선택 -->
   	<select id="BoardView" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
   	SELECT A.board_num, A.title, A.user_id, A.content, A.hit, A.writedate, A.likes,
-  		   B.user_id, B.user_img, B_user_level,
-  		   (select count(reply.replyno) from reply where A.board_num=reply.board_num) as reviewcnt
+  		   B.user_id, B.user_img, B_user_level
   	FROM board A, member B
   	WHERE A.user_id=B.user_id 
   	AND board_num = #{param1}
@@ -75,4 +73,7 @@
     UPDATE board SET likes=#{param2}
     WHERE board_num=#{param1}
     </update>
+    <select id="totalRecord" resultType="int">
+		SELECT count(*) from board
+	</select>
   </mapper>
