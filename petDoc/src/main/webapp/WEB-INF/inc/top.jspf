@@ -21,9 +21,13 @@
 			<div id= "Top_info"> 로그인</div>
 			</c:if>
 			<c:if test="${logStatus == 'Y' }">
-			<img id = "Top_profile" src="${logImg}"/>
-			<div id= "Top_info"> ${logName }&nbsp님</div>
+			<img id = "Top_profile" src="/upload/${logImg}"/>
+			<div id= "Top_info"> ${logName }&nbsp님 <a href="/member/logout" id="logout">로그아웃</a></div>
 			<div id= "Top_info2"><a href="/member/memberinfo">마이페이지로 이동</a></div>
+				<c:if test="${logLevel == '1' }">
+					<div id= "Top_info3"><a href="/admin/admininfo?type=notice">관리자페이지로 이동</a></div>
+				</c:if>
+				
 			</c:if>
 		</div>
 	        <ul>

@@ -24,6 +24,14 @@ public class BoardServiceImpl implements BoardService{
 		return dao.BoardSelectList(type, pvo);
 	}
 	@Override
+	public List<BoardVO> BoardSelectListAjax(String type, PagingVO pVO){
+		return dao.BoardSelectListAjax(type, pVO);
+	}
+	@Override
+	public List<BoardVO> boardSearch(String searchKey, String string, int start, int end, String boardtype){
+		return dao.boardSearch(searchKey, string, start, end, boardtype);
+	}
+	@Override
 	public void hitCount(int board_num) {
 		dao.hitCount(board_num);
 	}
@@ -65,9 +73,16 @@ public class BoardServiceImpl implements BoardService{
 	public int BoardDelete(int board_num, String user_id) {
 		return dao.BoardDelete(board_num, user_id);
 	}
-	
 	@Override 
 	public int totalRecord() { 
 		return dao.totalRecord(); 
+	}
+	@Override
+	public int BoardDeleteAdmin(int board_num) {
+		return dao.BoardDeleteAdmin(board_num);
+	}
+	@Override
+	public String getType(int board_num) {
+		return dao.getType(board_num);
 	}
 }

@@ -1,8 +1,11 @@
 package com.multicampus.petdoc.petDoc.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 import com.multicampus.petdoc.petDoc.vo.MemberVO;
+import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
 @Mapper
 @Repository
@@ -18,6 +21,7 @@ public interface MemberDAO {
 		
 		//회원정보수정
 		public MemberVO memberSelect(String user_id);
+		public List<MemberVO> memberSelectList(String type, PagingVO pVO);
 		
 		//회원정보수정
 		public int memberUpdate(MemberVO vo);

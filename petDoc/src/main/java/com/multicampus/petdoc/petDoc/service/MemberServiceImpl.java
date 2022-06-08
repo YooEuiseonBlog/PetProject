@@ -1,11 +1,14 @@
 package com.multicampus.petdoc.petDoc.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
 import com.multicampus.petdoc.petDoc.dao.MemberDAO;
 import com.multicampus.petdoc.petDoc.vo.MemberVO;
+import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -31,6 +34,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVO memberSelect(String user_id) {
 		return dao.memberSelect(user_id);
+	}
+	@Override
+	public List<MemberVO> memberSelectList(String type, PagingVO pVO) {
+		return dao.memberSelectList(type, pVO);
 	}
 	@Override
 	public int memberUpdate(MemberVO vo) {

@@ -60,3 +60,7 @@
 		});
 	});
 </script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/heads/board_kjy

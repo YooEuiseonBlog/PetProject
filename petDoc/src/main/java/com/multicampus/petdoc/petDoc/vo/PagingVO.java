@@ -15,6 +15,10 @@ public class PagingVO {
 	private int offsetIndex = 0;
 	private int onePageCount = 10;//한번에 표시할 페이지 수
 	private int startPage = 1;
+	
+	private int start=0;
+	private int end=0;
+	
 	//검색
 	private String searchKey;
 	private String searchWord;
@@ -137,5 +141,17 @@ public class PagingVO {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getEnd() {
+		return end;
+	}
+	public void setEnd(int end) {
+		this.end = end;
 	}
 }

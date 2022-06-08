@@ -20,19 +20,17 @@ let locPosition;
 
 function successPos(position) {
 	currentLat = position.coords.latitude, // 위도
-			currentLng = position.coords.longitude; // 경도
-		console.log('currentLat', currentLat);
-		console.log('currentLng', currentLng);
-		locPosition = new kakao.maps.LatLng(currentLat, currentLng) // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-			,message = '<div style="padding:5px;">'+locPosition+'</div>'; // 인포윈도우에 표시될 내용입니다
-		
-		map.setCenter(locPosition);
-		console.log('지금',map.getCenter(locPosition));
-		
-		// 마커와 인포윈도우를 표시합니다
-		displayMarker(locPosition, message);
-		
-		transAddr1(map.getCenter());
+		currentLng = position.coords.longitude; // 경도
+	console.log('currentLat', currentLat);
+	console.log('currentLng', currentLng);
+	locPosition = new kakao.maps.LatLng(currentLat, currentLng) // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+		, myTitle = '내 위치'; // 인포윈도우에 표시될 내용입니다
+	map.setCenter(locPosition);
+	console.log('지금', map.getCenter(locPosition));
+	// 마커와 인포윈도우를 표시합니다
+	displayMarker(locPosition, myTitle);
+
+	transAddr1(map.getCenter());
 }
 
 // WGS84좌표를 WTM으로 변환합니다.
@@ -102,32 +100,35 @@ function startPos() {
 }
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker(locPosition, message) {
+function displayMarker(markerPos, title) {
 
 	// 마커를 생성합니다
 	var marker = new kakao.maps.Marker({
 		map: map,
-		position: locPosition
+		position: markerPos
 	});
 
 	marker.setMap(map);
 
-	var iwContent = message, // 인포윈도우에 표시할 내용
-		iwRemoveable = true;
+	var iwContent = title, // 인포윈도우에 표시할 내용
+		iwRemoveable = false;
 
 	// 인포윈도우를 생성합니다
 	var infowindow = new kakao.maps.InfoWindow({
 		content: iwContent,
 		removable: iwRemoveable
 	});
-
-	let overlay = displayOverlay(locPosition, message);
+	
+	let hosAddr = addrSearch(markerPos, "all");
+	
+	let overlay = displayOverlay(markerPos, title, hosAddr);
 
 	infowindow.open(map, marker);
 
 	overlay.setMap(map);
 	overlay.setVisible(false);
 	console.log(overlay.getVisible());
+	
 	// 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
 	kakao.maps.event.addListener(marker, 'click', function() {
 		if (overlay.getVisible() == true) {
@@ -140,61 +141,45 @@ function displayMarker(locPosition, message) {
 		} else {
 			alert("error");
 		}
-
-		document.querySelector('.close').addEventListener('click', function() {
-			overlay.setVisible(false);
-			infowindow.open(map, marker);
-		});
 	});
 
 }
 
-
-
-
-function displayOverlay(locPosition, message) {
+function displayOverlay(markerPos, hosName, hosAddress) {
 	// 커스텀 오버레이에 표시할 컨텐츠 입니다
 	// 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
 	// 별도의 이벤트 메소드를 제공하지 않습니다 
-	var content = '<div class="wrap">' +
-		'    <div class="info">' +
-		'        <div class="title">' +
-		message +
-		'            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-		'        </div>' +
-		'        <div class="body">' +
-		'            <div class="img">' +
-		'                <img src="https://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-		'           </div>' +
-		'            <div class="desc">' +
-		'                <div class="ellipsis">주소1</div>' +
-		'                <div class="jibun ellipsis">주소2</div>' +
-		'            </div>' +
-		'        </div>' +
-		'    </div>' +
-		'</div>';
+	var content = '<div class="wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            hosName + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="https://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis"> 안녕 디지몬'+hosAddress+'</div>' + 
+            '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>' + 
+            '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>';
 
 	// 마커 위에 커스텀오버레이를 표시합니다
 	// 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
 	let overlay = new kakao.maps.CustomOverlay({
 		content: content,
 		map: map,
-		position: locPosition
+		position: markerPos
 	});
 	overlay.setMap(null);
 	
 	return overlay;
 }
 
-
-
-// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-function closeOverlay() {
-	overlay.setMap(null);
-}
-
-
-function circlePos(posCenter, hosPos, hosName) {
+function circlePos(posCenter, hosPos, hosName, hosAddr) {
 	// 원(Circle)의 옵션으로 넣어준 반지름
 	var radius = 1000;
 	console.log(radius);
@@ -206,9 +191,49 @@ function circlePos(posCenter, hosPos, hosName) {
 		});
 		var dist = polyline.getLength(); // m 단위로 리턴
 		if (dist < radius) {
-			displayMarker(hosPos, hosName);
+			displayMarker(hosPos, hosName, hosAddr);
 		}
 }
 
+function addrSearch(coord, addrArea) {
+	if(addrArea === "all") {
+		return geocoder.coord2Address(coord.getLng(), coord.getLat(), printAddrAll);
+	}else if(addrArea === "si_do") {
+		return geocoder.coord2Address(coord.getLng(), coord.getLat(), printAddrSido);
+	}else if(addrArea === "gu") {
+		return geocoder.coord2Address(coord.getLng(), coord.getLat(), printAddrGu);
+	}else if(addrArea === "dong") {
+		return geocoder.coord2Address(coord.getLng(), coord.getLat(), printAddrDong);
+	}
+}
 
+
+function printAddrAll(result, status) {
+	if (status === kakao.maps.services.Status.OK) {
+		console.log("전체주소: ", result[0].address.address_name);
+		return result[0].address.address_name;
+	}
+};
+
+function printAddrSido(result, status) {
+	if (status === kakao.maps.services.Status.OK) {
+		console.log("전체주소: ", result[0].address.address_name);
+		return result[0].road_address.region_1depth_name;
+	}
+};
+
+function printAddrGu(result, status) {
+	if (status === kakao.maps.services.Status.OK) {
+		console.log("전체주소: ", result[0].address.address_name);
+		return result[0].road_address.region_2depth_name;
+	}
+};
+function printAddrDong(result, status) {
+	if (status === kakao.maps.services.Status.OK) {
+		console.log("전체주소: ", result[0].address.address_name);
+		return result[0].road_address.region_3depth_name;
+	}
+};
+
+	
 window.onload = startPos();

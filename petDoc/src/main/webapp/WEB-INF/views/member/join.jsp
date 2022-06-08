@@ -233,7 +233,7 @@ $(()=>{
 				<p class="error_alert"></p>
 			</div>
 			
-			<input type="hidden" id="user_img" name="user_img" value="/img/logo_1.png"/>
+			<input type="hidden" id="user_img" name="user_img" value="logo_1.png"/>
 			
 			<input type="submit" class="button04" value="등록"/>
 			

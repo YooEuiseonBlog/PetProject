@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    list-style: none;
 }
 
 body{
@@ -67,14 +68,33 @@ body{
 	transition: opacity 0.3s;
 }
 #Top_info2{
-	height:50px;
-	margin-bottom:20px;
+	height:40px;
 	opacity:0;
 	transition: opacity 0.3s;
 }
+
+#Top_info3{
+	height:30px;
+	margin-bottom:10px;
+	opacity:0;
+	transition: opacity 0.3s;
+}
+
 #Top_info2>a:link,#Top_info2>a:hover,#Top_info2>a:visited{
 	text-decoration: none;
 	color:black;
+}
+#Top_info3>a:link,#Top_info3>a:hover,#Top_info3>a:visited{
+	text-decoration: none;
+	color:black;
+}
+
+#logout{
+	background-color: white;
+	text-decoration: none;
+	color:black;
+	border-radius: 5px;
+	border:5px solid white;
 }
 
 /*마우스 오버*/

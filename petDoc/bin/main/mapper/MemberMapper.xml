@@ -54,5 +54,11 @@
  		UPDATE member 
  		SET user_img=#{user_img} WHERE user_id=#{user_id}
  	</update>
+	<select id="memberSelectList" resultType="com.multicampus.petdoc.petDoc.vo.MemberVO">
+	SELECT user_id, user_name, user_img, user_pwd, user_addr, user_level
+  	FROM   member
+	ORDER by user_id desc 
+	LIMIT 	 #{param2.start}, #{param2.end}
+  	</select>
 
 </mapper>
