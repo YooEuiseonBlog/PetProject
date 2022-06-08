@@ -23,6 +23,7 @@
 	z-index: 300;
 	border-radius: 10%;
 	border-style: none;
+	background:white;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -38,6 +39,7 @@
 	font-size: 12px;
 	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
 	line-height: 1.5;
+	padding: 5px;
 }
 
 .wrap * {
@@ -67,6 +69,7 @@
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 	font-weight: bold;
+	color:rgb(30,30,30);
 }
 
 .info .close {
@@ -98,7 +101,8 @@
 .desc .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
+	white-space: normal;
+	color: rgb(30,30,30);
 }
 
 .desc .jibun {
@@ -132,4 +136,16 @@
 
 .info .link {
 	color: #5085BB;
+}
+.infowindowDiv {
+	padding:5px;
+	text-align: center !important;
+	width: 150px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 30% !important;
+	border-style:none !important;
+	box-sizing: border-box;
+	
 }
