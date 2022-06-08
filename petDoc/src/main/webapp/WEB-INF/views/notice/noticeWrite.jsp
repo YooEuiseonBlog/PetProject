@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/notice/noticeWrite.css" type="text/css">
-<!-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> -->
+<script src="https://cdn.ckeditor.com/4.7.0/full-all/ckeditor.js"></script>
 <script src="/js/ckeditor/ckeditor.js"></script>
 
 <div class="noticeWriteContainer">
@@ -60,7 +60,3 @@
 		});
 	});
 </script>
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/heads/board_kjy
