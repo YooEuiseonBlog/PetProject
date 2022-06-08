@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.multicampus.petdoc.petDoc.dao.BoardDAO;
 import com.multicampus.petdoc.petDoc.vo.BoardVO;
+import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -19,8 +20,8 @@ public class BoardServiceImpl implements BoardService{
 		return dao.BoardInsert(vo);
 	}
 	@Override
-	public List<BoardVO> BoardSelectList(String type){
-		return dao.BoardSelectList(type);
+	public List<BoardVO> BoardSelectList(String type, PagingVO pvo){
+		return dao.BoardSelectList(type, pvo);
 	}
 	@Override
 	public void hitCount(int board_num) {
@@ -65,7 +66,8 @@ public class BoardServiceImpl implements BoardService{
 		return dao.BoardDelete(board_num, user_id);
 	}
 	
-	@Override public int totalRecord() { 
+	@Override 
+	public int totalRecord() { 
 		return dao.totalRecord(); 
 	}
 }

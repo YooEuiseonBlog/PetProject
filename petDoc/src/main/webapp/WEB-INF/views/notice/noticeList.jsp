@@ -77,13 +77,11 @@
 				</c:if>
 			</c:forEach>
 			<c:if test="${pvo.pageNum==pvo.totalPage}">
-				<li class="page-item disabled"><a class="page-link"
-					id="nextBtn"><i class="fa fa-angle-right"></i></a></li>
+				<li class="page-item"><a class="page-link" id="nextBtn"><i class="fa fa-angle-right"></i></a></li>
 			</c:if>
 			<c:if test="${pvo.pageNum<pvo.totalPage}">
-				<li class="page-item"><a class="page-link"
-					href="/notice/noticeList?pageNum=${pvo.pageNum+1}" id="nextBtn"><i
-						class="fa fa-angle-right"></i></a></li>
+				<li class="page-item"><a class="page-link" href="/notice/noticeList?pageNum=${pvo.pageNum+1}" id="nextBtn">
+						<i class="fa fa-angle-right"></i></a></li>
 			</c:if>
 		</ul>
 	</div>

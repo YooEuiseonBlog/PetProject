@@ -15,7 +15,8 @@
  	 		FROM board A, member B
  	 		WHERE A.user_id = B.user_id
  	 		AND A.boardtype=#{param1}
- 	 		ORDER by board_num desc
+ 	 		ORDER by board_num desc 
+ 	 		LIMIT ${param2.onePageRecord} offset ${param2.offsetIndex}
  	 </select>
   	<!--  글 하나 선택 -->
   	<select id="BoardView" resultType="com.multicampus.petdoc.petDoc.vo.BoardVO">
@@ -74,6 +75,6 @@
     WHERE board_num=#{param1}
     </update>
     <select id="totalRecord" resultType="int">
-		SELECT count(*) from board
+		SELECT count(board_num) from board
 	</select>
   </mapper>

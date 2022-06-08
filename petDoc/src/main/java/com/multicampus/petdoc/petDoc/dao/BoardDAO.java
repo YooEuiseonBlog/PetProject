@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.multicampus.petdoc.petDoc.vo.BoardVO;
+import com.multicampus.petdoc.petDoc.vo.PagingVO;
 
 @Mapper
 @Repository
@@ -13,7 +14,7 @@ public interface BoardDAO {
 	//글 등록
 	public int BoardInsert(BoardVO vo);
 	//글 선택(리스트)
-	public List<BoardVO> BoardSelectList(String type);
+	public List<BoardVO> BoardSelectList(String type, PagingVO pvo);
 	//조회수 증가
 	public void hitCount(int board_num);
 	public void LikeInsert(int board_num, String user_id);

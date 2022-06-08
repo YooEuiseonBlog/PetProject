@@ -59,10 +59,10 @@ public class BoardVO {
 	public void setFilename1(String filename1) {
 		this.filename1 = filename1;
 	}
-	public String getBaordtype() {
+	public String getBoardtype() {
 		return boardtype;
 	}
-	public void setBaordtype(String baordtype) {
-		this.boardtype = baordtype;
+	public void setBoardtype(String boardtype) {
+		this.boardtype = boardtype;
 	}
 }

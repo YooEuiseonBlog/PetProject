@@ -5,7 +5,7 @@ import java.util.List;
 public class PagingVO {
 	//페이징
 	private int onePageRecord = 10;//한페이지당 출력할 레코드 수
-	private int boardOnePageRecord = 8;	// 출력할 레코드 수
+	private int boardOnePageRecord = 5;	// 출력할 레코드 수
 	private int pageNum = 1;//현재페이지
 	private int boardPageNum = 1;// 현재페이지
 	private int totalRecord;//총 레코드의 수

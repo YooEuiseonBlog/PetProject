@@ -105,3 +105,17 @@ a, a:visited, a:hover, a:active{
 .modalClose{
 	font-size:1.7em;
 }
+
+.pagingContainer{
+	margin:0 auto;
+}
+.pagingContainer li{
+	float:left;
+}
+.page-link{
+	font-size:1.5em;
+	float:right;
+}
+.page-link:hover{
+	border-radius:5px !important;
+}
