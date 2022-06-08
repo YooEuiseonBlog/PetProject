@@ -59,7 +59,7 @@ function sendPos(result, status) {
 			type: 'POST',
 			data: data,
 			success: function(result) {
-				alert('전송 성공했습니다.');
+				//alert('전송 성공했습니다.');
 				console.log('result', result);
 				console.log('result[0].hos_name', result[0].hos_name);
 				console.log("중심점: ", map.getCenter());

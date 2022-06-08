@@ -147,5 +147,7 @@
 	border-radius: 30% !important;
 	border-style:none !important;
 	box-sizing: border-box;
+   	text-overflow:ellipsis !important;
+   	white-space:nowrap;
 	
 }
