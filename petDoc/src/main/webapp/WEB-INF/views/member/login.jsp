@@ -92,7 +92,6 @@
 			</div>
 			<br>
 			<a href="/member/join"><small>회원가입</small></a> 
-			<a href="#"><small>아이디/비밀번호찾기</small></a>
 			<input type="submit" id="login_btn" value="로그인"/>
 	</form>
 </div>
